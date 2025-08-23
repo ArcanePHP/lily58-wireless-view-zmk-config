@@ -56,9 +56,9 @@
 
             display-name = "Lower";
             bindings = <
-&kp HOME  &kp PAGE_UP    &kp N7        &kp N8        &kp N9          &kp DEL                          &kp DEL        &kp AMPERSAND    &kp ASTERISK  &trans     &kp LEFT_BRACE        &kp RIGHT_BRACE
+&kp HOME  &kp PAGE_UP    &kp N7        &kp N8        &kp N9          &kp DEL                          &kp DEL        &kp AMPERSAND    &kp ASTERISK  &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET
 &kp END   &kp PAGE_DOWN  &kp NUMBER_4  &kp N5        &kp NUMBER_6    &kp BACKSPACE                    &kp BACKSPACE  &kp DOLLAR       &kp PERCENT   &kp CARET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&trans    &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &to 2                            &to 2          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &kp LEFT_BRACKET      &kp RIGHT_BRACKET
+&trans    &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &to 2                            &to 2          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &kp LEFT_BRACE        &kp RIGHT_BRACE
 &none     &none          &kp UP_ARROW  &kp RIGHT     &kp LEFT_ARROW  &kp DOWN       &trans    &trans  &trans         &trans           &none         &none      &none                 &none
                                        &trans        &kp ENTER       &trans         &trans    &trans  &trans         &trans           &trans
             >;
