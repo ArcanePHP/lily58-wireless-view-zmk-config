@@ -78,11 +78,11 @@
 
         L3mousestuff {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &mkp MCLK  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans          &trans          &trans           &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans          &trans          &trans           &trans     &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &msc SCRL_LEFT   &mkp LCLK         &mmv MOVE_UP      &mkp RCLK        &mkp MCLK  &msc SCRL_UP
+&trans  &trans  &trans  &trans  &trans  &trans                    &msc SCRL_RIGHT  &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_RIGHT  &trans     &msc SCRL_DOWN
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans           &mmv MOVE_X(100)  &mmv MOVE_Y(100)  &trans           &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans            &trans            &trans           &trans     &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans           &trans            &trans
             >;
         };
 
