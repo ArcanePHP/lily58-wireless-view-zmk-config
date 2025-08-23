@@ -33,39 +33,35 @@
             require-prior-idle-ms = <400>;
             flavor = "tap-preferred";
         };
+
+        // 🔹 Unified behavior for home row Layer-Tap keys (A, S, D, F, J, K, L, ;)
+        hr_lt: hr_lt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_LT";
+            #binding-cells = <2>;            // two params: <layer key>
+            tapping-term-ms = <400>;         // 400 ms before hold activates
+            flavor = "hold-preferred";       // avoid accidental layer switches
+            bindings = <&mo>, <&kp>;         // hold = layer, tap = key
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
-
             display-name = "Base";
             bindings = <
-&kp TAB         &kp Q    &kp W    &kp E    &kp R     &kp T                                     &kp Y              &kp U           &kp I          &kp O             &kp P            &kp BACKSLASH
-&kp GRAVE       &lt 1 A  &lt 2 S  &lt 3 D  &lt 4 F   &kp G                                     &kp H              &lt 4 J         &lt 3 K        &lt 2 L           &lt 1 SEMICOLON  &kp ENTER
-&kp LEFT_SHIFT  &kp Z    &kp X    &kp C    &kp V     &kp B                                     &kp N              &kp M           &kp COMMA      &kp PERIOD        &kp SLASH        &kp RIGHT_SHIFT
-&none           &none    &kp ESC  &mo 2    &mo 0     &kp SPACE  &none           &none          &mo 0              &mo 2           &kp BACKSPACE  &kp SINGLE_QUOTE  &none            &none
-                                  &none    &kp LGUI  &kp LCTRL  &kp LEFT_ALT    &kp RIGHT_ALT  &kp RIGHT_CONTROL  &kp RIGHT_META  &none
+&kp TAB         &kp Q        &kp W          &kp E         &kp R        &kp T                              &kp Y         &kp U         &kp I         &kp O         &kp P            &kp BACKSLASH
+&kp GRAVE       &hr_lt 1 A   &hr_lt 2 S     &hr_lt 3 D    &hr_lt 4 F   &kp G                              &kp H         &hr_lt 4 J    &hr_lt 3 K    &hr_lt 2 L    &hr_lt 1 SEMICOLON &kp ENTER
+&kp LEFT_SHIFT  &kp Z        &kp X          &kp C         &kp V        &kp B                              &kp N         &kp M         &kp COMMA     &kp PERIOD    &kp SLASH        &kp RIGHT_SHIFT
+&none           &none        &kp ESC        &mo 2         &mo 0        &kp SPACE   &none       &none       &mo 0         &mo 2         &kp BACKSPACE &kp SINGLE_QUOTE &none           &none
+                                    &none   &kp LGUI      &kp LCTRL    &kp LEFT_ALT &kp RIGHT_ALT &kp RIGHT_CONTROL &kp RIGHT_META &none
             >;
 
             sensor-bindings = <&inc_dec_kp A C_VOL_DN>;
         };
 
         L1_numsAndSymb {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
-
             display-name = "Lower";
             bindings = <
 &kp HOME  &kp PAGE_UP    &kp N7        &kp N8        &kp N9          &kp DEL                          &kp DEL        &kp AMPERSAND    &kp ASTERISK  &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET
