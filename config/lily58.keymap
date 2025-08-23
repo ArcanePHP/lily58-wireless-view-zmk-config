@@ -36,11 +36,11 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB         &kp Q  &kp W    &kp E  &kp R     &kp T                                     &kp Y              &kp U  &kp I          &kp O             &kp P          &kp NON_US_BACKSLASH
-&kp GRAVE       &kp A  &kp S    &kp D  &lt 3 F   &kp G                                     &kp H              &kp J  &kp K          &kp L             &kp SEMICOLON  &kp ENTER
-&kp LEFT_SHIFT  &kp Z  &kp X    &kp C  &lt 4 V   &kp B                                     &kp N              &kp M  &kp COMMA      &kp PERIOD        &kp SLASH      &kp RIGHT_SHIFT
-&none           &none  &kp ESC  &mo 2  &mo 0     &kp SPACE  &none           &none          &mo 0              &mo 2  &kp BACKSPACE  &kp SINGLE_QUOTE  &none          &none
-                                &none  &kp LGUI  &kp LCTRL  &kp LEFT_ALT    &kp RIGHT_ALT  &kp RIGHT_CONTROL  &mo 2  &none
+&kp TAB         &kp Q  &kp W    &kp E    &kp R     &kp T                                     &kp Y              &kp U           &kp I          &kp O             &kp P          &kp BACKSLASH
+&kp GRAVE       &kp A  &kp S    &kp D    &lt 3 F   &kp G                                     &kp H              &lt 3 J         &kp K          &kp L             &kp SEMICOLON  &kp ENTER
+&kp LEFT_SHIFT  &kp Z  &lt 2 X  &lt 1 C  &lt 4 V   &kp B                                     &kp N              &lt 4 M         &lt 1 COMMA    &lt 2 PERIOD      &kp SLASH      &kp RIGHT_SHIFT
+&none           &none  &kp ESC  &mo 2    &mo 0     &kp SPACE  &none           &none          &mo 0              &mo 2           &kp BACKSPACE  &kp SINGLE_QUOTE  &none          &none
+                                &none    &kp LGUI  &kp LCTRL  &kp LEFT_ALT    &kp RIGHT_ALT  &kp RIGHT_CONTROL  &kp RIGHT_META  &none
             >;
 
             sensor-bindings = <&inc_dec_kp A C_VOL_DN>;
@@ -78,11 +78,11 @@
 
         homerowstuffs {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &kp LC(LEFT)  &kp UP        &kp LC(RIGHT)  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &kp LEFT      &kp DOWN      &kp RIGHT      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(RIGHT)  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans  &trans        &trans        &trans         &trans  &trans
-                        &trans  &trans  &trans  &trans    &kp SPACE  &trans  &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                             &trans  &kp LC(LEFT)  &kp UP        &kp LC(RIGHT)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                             &trans  &kp LEFT      &kp DOWN      &kp RIGHT      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                             &trans  &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(RIGHT)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans     &trans  &trans        &trans        &trans         &trans  &trans
+                        &trans  &trans  &trans  &kp LEFT_WIN    &kp SPACE  &trans  &trans        &trans
             >;
         };
 
