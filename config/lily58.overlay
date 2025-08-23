@@ -1,1 +1,16 @@
+/ {
+    behaviors {
+        mmv_fast: mmv_fast {
+            compatible = "zmk,behavior-mouse-move";
+            #binding-cells = <1>;
+            params = <1500>;   /* cursor speed */
+        };
+
+        msc_fast: msc_fast {
+            compatible = "zmk,behavior-mouse-scroll";
+            #binding-cells = <1>;
+            params = <20>;     /* scroll speed */
+        };
+    };
+};
 
