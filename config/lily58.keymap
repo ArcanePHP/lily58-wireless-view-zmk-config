@@ -49,7 +49,7 @@
         bottom_row_mods: bottom_row_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <700>;         // 800ms hold for modifiers
+            tapping-term-ms = <600>;         // 800ms hold for modifiers
             quick-tap-ms = <200>;            // Allow quick repeated taps
             require-prior-idle-ms = <100>;   // Small pause before hold can activate
             flavor = "tap-preferred";        // Strongly prefer tap over hold
