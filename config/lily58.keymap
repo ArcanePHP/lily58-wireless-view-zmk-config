@@ -32,14 +32,14 @@
             flavor = "tap-preferred";
         };
 
-        // 🔹 Enhanced home row Layer-Tap with stricter timing to prevent accidental layer switches
+        // 🔹 Enhanced home row Layer-Tap with very long hold time to prevent accidental layer switches
         hr_lt: hr_lt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;         // Optimal timing for most users
-            quick-tap-ms = <175>;            // Allows quick repeated taps
-            require-prior-idle-ms = <150>;   // Requires pause before hold activation
-            flavor = "tap-unless-interrupted"; // Most reliable for preventing accidental holds
+            tapping-term-ms = <1000>;        // 1 second hold required
+            quick-tap-ms = <200>;            // Allow quick repeated taps
+            require-prior-idle-ms = <100>;   // Small pause before hold can activate
+            flavor = "tap-preferred";        // Strongly prefer tap over hold
             bindings = <&mo>, <&kp>;
         };
 
