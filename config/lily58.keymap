@@ -33,6 +33,7 @@
         };
 
         // 🔹 Enhanced home row Layer-Tap with very long hold time to prevent accidental layer switches
+
         hr_lt: hr_lt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -44,6 +45,7 @@
         };
 
         // 🔹 Bottom row modifiers (Z, X, C) with 800ms hold time for modifiers
+
         bottom_row_mods: bottom_row_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -51,10 +53,12 @@
             quick-tap-ms = <200>;            // Allow quick repeated taps
             require-prior-idle-ms = <100>;   // Small pause before hold can activate
             flavor = "tap-preferred";        // Strongly prefer tap over hold
-            bindings = <&kp>, <&kp>;         // hold = modifier, tap = key
+            bindings = <&kp>, <&kp>;
+         // hold = modifier, tap = key
         };
 
         // 🔹 Alternative: Even more conservative layer-tap for ultra-sensitive users
+
         hr_lt_conservative: hr_lt_conservative {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -66,6 +70,7 @@
         };
 
         // 🔹 Alternative: Mod-tap version that only activates on key combinations
+
         hr_mt: hr_mt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -83,11 +88,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB         &kp Q        &kp W          &kp E         &kp R        &kp T                              &kp Y         &kp U         &kp I         &kp O         &kp P            &kp BACKSLASH
-&kp GRAVE       &hr_lt 1 A   &hr_lt 2 S     &hr_lt 3 D    &hr_lt 4 F   &kp G                              &kp H         &hr_lt 4 J    &hr_lt 3 K    &hr_lt 2 L    &hr_lt 1 SEMICOLON &kp ENTER
-&kp LEFT_SHIFT  &bottom_row_mods LGUI Z  &bottom_row_mods LCTRL X  &bottom_row_mods LALT C  &kp V        &kp B                              &kp N         &kp M         &kp COMMA     &kp PERIOD    &kp SLASH        &kp RIGHT_SHIFT
-&none           &none        &kp ESC        &mo 2         &mo 0        &kp SPACE   &none       &none       &mo 0         &mo 2         &kp BACKSPACE &kp SINGLE_QUOTE &none           &none
-                                    &none   &kp LGUI      &kp LCTRL    &kp LEFT_ALT &kp RIGHT_ALT &kp RIGHT_CONTROL &kp RIGHT_META &none
+&kp TAB         &kp Q                    &kp W                     &kp E                    &kp R       &kp T                                                            &kp Y              &kp U           &kp I          &kp O             &kp P               &kp BACKSLASH
+&kp GRAVE       &hr_lt 1 A               &hr_lt 2 S                &hr_lt 3 D               &hr_lt 4 F  &kp G                                                            &kp H              &hr_lt 4 J      &hr_lt 3 K     &hr_lt 2 L        &hr_lt 1 SEMICOLON  &kp ENTER
+&kp LEFT_SHIFT  &bottom_row_mods LGUI Z  &bottom_row_mods LCTRL X  &bottom_row_mods LALT C  &kp V       &kp B                                                            &kp N              &kp M           &kp COMMA      &kp PERIOD        &kp SLASH           &kp RIGHT_SHIFT
+&none           &none                    &kp ESC                   &mo 2                    &mo 0       &kp SPACE         &none                 &none                    &mo 0              &mo 2           &kp BACKSPACE  &kp SINGLE_QUOTE  &none               &none
+                                                                   &none                    &kp LGUI    &mt LCTRL ESCAPE  &mt LEFT_ALT SPACE    &mt RIGHT_ALT BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_META  &none
             >;
 
             sensor-bindings = <&inc_dec_kp A C_VOL_DN>;
