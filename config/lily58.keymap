@@ -90,11 +90,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp GRAVE       &kp Q                    &kp W                     &kp E                    &kp R       &kp T                                               &kp Y              &kp U           &kp I          &kp O             &kp P               &kp BACKSLASH
-&kp ESC         &hr_lt 1 A               &hr_lt 2 S                &hr_lt 3 D               &hr_lt 4 F  &kp G                                               &kp H              &hr_lt 4 J      &hr_lt 3 K     &hr_lt 2 L        &hr_lt 1 SEMICOLON  &kp ENTER
-&kp LEFT_SHIFT  &bottom_row_mods LGUI Z  &bottom_row_mods LCTRL X  &bottom_row_mods LALT C  &kp V       &kp B                                               &kp N              &kp M           &kp COMMA      &kp PERIOD        &kp SLASH           &kp RIGHT_SHIFT
-&none           &none                    &kp ESC                   &kp SPACE                &kp SPACE   &kp SPACE  &none           &none                    &mo 0              &mo 2           &kp BACKSPACE  &kp SINGLE_QUOTE  &none               &none
-                                                                   &none                    &kp LGUI    &kp LCTRL  &kp LEFT_ALT    &mt RIGHT_ALT BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_META  &none
+&kp GRAVE       &kp Q                    &kp W                     &kp E                    &kp R       &kp T                                               &kp Y              &kp U             &kp I             &kp O             &kp P               &kp BACKSLASH
+&kp ESC         &hr_lt 1 A               &hr_lt 2 S                &hr_lt 3 D               &hr_lt 4 F  &kp G                                               &kp H              &hr_lt 4 J        &hr_lt 3 K        &hr_lt 2 L        &hr_lt 1 SEMICOLON  &kp ENTER
+&kp LEFT_SHIFT  &bottom_row_mods LGUI Z  &bottom_row_mods LCTRL X  &bottom_row_mods LALT C  &lt 6 V     &kp B                                               &kp N              &kp M             &kp COMMA         &kp PERIOD        &kp SLASH           &kp RIGHT_SHIFT
+&none           &none                    &kp SPACE                 &kp SPACE                &kp SPACE   &kp SPACE  &none           &none                    &kp SINGLE_QUOTE   &kp SINGLE_QUOTE  &kp SINGLE_QUOTE  &kp SINGLE_QUOTE  &none               &none
+                                                                   &none                    &kp LGUI    &kp LCTRL  &kp LEFT_ALT    &mt RIGHT_ALT BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_META    &none
             >;
 
             sensor-bindings = <&inc_dec_kp A C_VOL_DN>;
@@ -153,10 +153,30 @@
         homerowstuffs {
             bindings = <
 &kp ESCAPE  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2    &trans  &trans                                   &bt BT_CLR             &kp LC(LEFT)  &kp UP        &kp LC(RIGHT)  &trans  &trans
-&trans      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2   &trans  &trans                                   &trans                 &kp LEFT      &kp DOWN      &kp RIGHT      &trans  &trans
+&trans      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2   &trans  &trans                                   &studio_unlock         &kp LEFT      &kp DOWN      &kp RIGHT      &trans  &trans
 &trans      &trans         &trans         &trans          &trans  &trans                                   &trans                 &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(RIGHT)  &trans  &trans
 &trans      &trans         &trans         &studio_unlock  &trans  &trans  &trans     &trans                &trans                 &trans        &trans        &trans         &trans  &trans
                                           &trans          &trans  &trans  &kp TAB    &kp LC(LEFT_BRACKET)  &kp LC(RIGHT_BRACKET)  &trans        &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp LS(UNDER)  &kp LS(PLUS)  &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp SQT        &kp LS(DQT)   &kp BSPC  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans         &trans        &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans         &trans        &trans    &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans         &trans
             >;
         };
     };
