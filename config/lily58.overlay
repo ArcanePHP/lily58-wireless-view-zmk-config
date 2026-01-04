@@ -1,11 +1,14 @@
 / {
+    chosen {
+        zmk,studio-rpc-uart = &cdc_acm_uart;
+    };
+
     behaviors {
         mmv_fast: mmv_fast {
             compatible = "zmk,behavior-mouse-move";
             #binding-cells = <1>;
             params = <1500>;   /* cursor speed */
         };
-
         msc_fast: msc_fast {
             compatible = "zmk,behavior-mouse-scroll";
             #binding-cells = <1>;
@@ -14,3 +17,15 @@
     };
 };
 
+&usbd {
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
+```
+
+This adds the required `zmk-studio-rpc-uart` chosen node and CDC ACM UART device that ZMK Studio needs for communication.
+
+**Alternative solution**: If you don't plan to use ZMK Studio features, you can simply disable it by adding this line to your config file (likely `lily58_left.conf` or your main `.conf` file):
+```
+CONFIG_ZMK_STUDIO=n
