@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: v4.0  # Use a stable version instead of main
+      remote: badjeff
+      revision: feat/pointers-move-scroll
       import: app/west.yml
   self:
     path: config
