@@ -10,6 +10,22 @@
 #include <dt-bindings/zmk/mouse.h>
 / {
     behaviors {
+ studio_unlock: studio_unlock {
+            compatible = "zmk,behavior-studio-unlock";
+            #binding-cells = <0>;
+        };
+        
+        // your existing behaviors
+        mmv_fast: mmv_fast {
+            compatible = "zmk,behavior-mouse-move";
+            #binding-cells = <1>;
+            params = <1500>;
+        };
+        msc_fast: msc_fast {
+            compatible = "zmk,behavior-mouse-scroll";
+            #binding-cells = <1>;
+            params = <20>;
+        };
         home_row_mods: home_row_mods {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
