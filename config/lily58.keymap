@@ -118,7 +118,7 @@
 &kp ESC         &hr_lt 1 A               &hr_lt 2 S  &hr_lt 3 D  &hr_lt 4 F  &kp G                                               &kp H              &hr_lt 4 J        &hr_lt 3 K        &hr_lt 2 L        &hr_lt 1 SEMICOLON   &kp ENTER
 &kp LEFT_SHIFT  &bottom_row_mods LGUI Z  &kp X       &kp C       &lt 5 V     &kp B                                               &kp N              &kp M             &kp COMMA         &kp PERIOD        &mt RIGHT_WIN SLASH  &kp RIGHT_SHIFT
 &none           &mo 3                    &mo 4       &kp SPACE   &mo 2       &mo 1      &none           &none                    &kp SINGLE_QUOTE   &kp SINGLE_QUOTE  &kp SINGLE_QUOTE  &kp SINGLE_QUOTE  &none                &none
-                                                     &none       &kp LGUI    &kp LCTRL  &kp LEFT_ALT    &mt RIGHT_ALT BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_META    &none
+                                                     &none       &kp B       &kp LCTRL  &kp LEFT_ALT    &mt RIGHT_ALT BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_META    &none
             >;
 
             sensor-bindings = <&inc_dec_kp A C_VOL_DN>;
@@ -152,7 +152,7 @@
             display-name = "3-mouse-movements";
             bindings = <
 &trans  &kp PAGE_UP    &mkp LCLK           &mmv MOVE_Y(-2000)  &mkp RCLK          &msc SCRL_UP                      &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP     &mkp RCLK        &mkp MCLK  &msc SCRL_UP
-&trans  &kp PAGE_DOWN  &mmv MOVE_X(-2000)  &mmv MOVE_Y(2000)    &mmv MOVE_X(2000)  &msc SCRL_DOWN                    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans     &msc SCRL_DOWN
+&trans  &kp PAGE_DOWN  &mmv MOVE_X(-2000)  &mmv MOVE_Y(2000)   &mmv MOVE_X(2000)  &msc SCRL_DOWN                    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans     &msc SCRL_DOWN
 &trans  &trans         &trans              &trans              &trans             &trans                            &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans           &trans     &trans
 &trans  &trans         &trans              &trans              &trans             &trans          &trans    &trans  &trans          &trans          &trans           &trans           &trans     &trans
                                            &trans              &trans             &trans          &trans    &trans  &trans          &trans          &trans
