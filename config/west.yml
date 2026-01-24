@@ -1,16 +1,11 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: caksoylar
+      revision: caksoylar/oled-widgets
       import: app/west.yml
-    - name: zmk-nice-oled
-      remote: mctechnology17
-      revision: main
   self:
     path: config
