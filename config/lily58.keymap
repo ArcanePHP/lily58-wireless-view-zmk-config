@@ -112,7 +112,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "normal";
+            display-name = "default";
             bindings = <
 &kp GRAVE       &kp Q                    &kp W       &kp E       &kp R       &kp T                                               &kp Y              &kp U             &kp I             &kp O             &kp P                &kp BACKSLASH
 &kp ESC         &hr_lt 1 A               &hr_lt 2 S  &hr_lt 3 D  &hr_lt 4 F  &kp G                                               &kp H              &hr_lt 4 J        &hr_lt 3 K        &hr_lt 2 L        &hr_lt 1 SEMICOLON   &kp ENTER
@@ -125,7 +125,7 @@
         };
 
         L1_numsAndSymb {
-            display-name = "1-number|symbols";
+            display-name = "1-nm/sym";
             bindings = <
 &kp HOME  &kp PAGE_UP    &kp N7        &kp N8        &kp N9        &kp DEL                              &kp UNDER  &kp AMPERSAND    &kp ASTERISK  &kp MINUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
 &kp END   &kp PAGE_DOWN  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp BACKSPACE                        &kp EQUAL  &kp DOLLAR       &kp PERCENT   &kp CARET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
@@ -138,7 +138,7 @@
         };
 
         L2_function_stuff {
-            display-name = "2-fnKeys|arrows";
+            display-name = "2-fn/nav";
             bindings = <
 &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10                    &trans  &kp LC(LEFT)  &kp UP    &kp LC(RIGHT)  &trans  &trans
 &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11                    &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &trans  &trans
@@ -149,7 +149,7 @@
         };
 
         L3mousestuff {
-            display-name = "3-mouse-movements";
+            display-name = "3-mouse";
             bindings = <
 &trans  &kp PAGE_UP    &mkp LCLK           &mmv MOVE_Y(-2000)  &mkp RCLK          &msc SCRL_UP                      &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP     &mkp RCLK        &mkp MCLK  &msc SCRL_UP
 &trans  &kp PAGE_DOWN  &mmv MOVE_X(-2000)  &mmv MOVE_Y(2000)   &mmv MOVE_X(2000)  &msc SCRL_DOWN                    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans     &msc SCRL_DOWN
@@ -160,7 +160,7 @@
         };
 
         homerowstuffs {
-            display-name = "4-bluetooth";
+            display-name = "4-Devices";
             bindings = <
 &kp ESCAPE  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans  &to 5                                    &bt BT_CLR             &kp LC(LEFT)  &kp UP        &kp LC(RIGHT)  &trans  &trans
 &trans      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &trans  &none                                    &trans                 &kp LEFT      &kp DOWN      &kp RIGHT      &trans  &trans
@@ -171,7 +171,7 @@
         };
 
         anotherSymbolLayer {
-            display-name = "5-WASD|symbols";
+            display-name = "5-Game";
             bindings = <
 &to 0   &kp Q   &kp W   &kp E   &kp R   &kp T                     &trans  &kp LS(UNDER)  &kp LS(PLUS)  &kp MINUS         &trans    &trans
 &trans  &kp A   &kp S   &kp D   &kp F   &kp G                     &kp Z   &kp SQT        &kp LS(DQT)   &kp SINGLE_QUOTE  &trans    &trans
