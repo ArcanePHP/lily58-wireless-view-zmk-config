@@ -12,8 +12,6 @@
 
 / {
     behaviors {
-        // your existing behaviors
-
         mmv_fast: mmv_fast {
             compatible = "zmk,behavior-mouse-move";
             #binding-cells = <1>;
@@ -48,45 +46,35 @@
             flavor = "tap-preferred";
         };
 
-        // 🔹 Enhanced home row Layer-Tap with very long hold time to prevent accidental layer switches
-
         hr_lt: hr_lt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <700>;        // 1 second hold required
-            quick-tap-ms = <200>;            // Allow quick repeated taps
-            require-prior-idle-ms = <100>;   // Small pause before hold can activate
-            flavor = "tap-preferred";        // Strongly prefer tap over hold
+            tapping-term-ms = <700>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <100>;
+            flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
-
-        // 🔹 Bottom row modifiers (Z, X, C) with 800ms hold time for modifiers
 
         bottom_row_mods: bottom_row_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <600>;         // 800ms hold for modifiers
-            quick-tap-ms = <200>;            // Allow quick repeated taps
-            require-prior-idle-ms = <100>;   // Small pause before hold can activate
-            flavor = "tap-preferred";        // Strongly prefer tap over hold
+            tapping-term-ms = <600>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <100>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-
-            // hold = modifier, tap = key
         };
-
-        // 🔹 Alternative: Even more conservative layer-tap for ultra-sensitive users
 
         hr_lt_conservative: hr_lt_conservative {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <600>;         // Very long hold time
-            quick-tap-ms = <200>;            // Allow quick taps
-            require-prior-idle-ms = <200>;   // Require significant pause
-            flavor = "tap-preferred";        // Strongly prefer tap over hold
+            tapping-term-ms = <600>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+            flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
-
-        // 🔹 Alternative: Mod-tap version that only activates on key combinations
 
         hr_mt: hr_mt {
             compatible = "zmk,behavior-hold-tap";
@@ -113,12 +101,12 @@
 
         default_layer {
             display-name = "default";
-            bindings = <
+            bindings = 
 &kp GRAVE       &kp Q                    &kp W       &kp E       &kp R       &kp T                                               &kp Y              &kp U             &kp I             &kp O             &kp P                &kp BACKSLASH
 &kp ESC         &hr_lt 1 A               &hr_lt 2 S  &hr_lt 3 D  &hr_lt 4 F  &kp G                                               &kp H              &hr_lt 4 J        &hr_lt 3 K        &hr_lt 2 L        &hr_lt 1 SEMICOLON   &kp ENTER
 &kp LEFT_SHIFT  &bottom_row_mods LGUI Z  &kp X       &kp C       &lt 5 V     &kp B                                               &kp N              &kp M             &kp COMMA         &kp PERIOD        &mt RIGHT_WIN SLASH  &kp RIGHT_SHIFT
 &none           &mo 3                    &mo 4       &kp SPACE   &mo 2       &mo 1      &none           &none                    &kp SINGLE_QUOTE   &kp SINGLE_QUOTE  &kp SINGLE_QUOTE  &kp SINGLE_QUOTE  &none                &none
-                                                     &none       &kp B       &kp LCTRL  &kp LEFT_ALT    &mt RIGHT_ALT BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_META    &none
+                                                     &none       &kp LCTRL   &kp B      &kp LEFT_ALT    &mt RIGHT_ALT BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_META    &none
             >;
 
             sensor-bindings = <&inc_dec_kp A C_VOL_DN>;
@@ -126,7 +114,7 @@
 
         L1_numsAndSymb {
             display-name = "1-nm/sym";
-            bindings = <
+            bindings = 
 &kp HOME  &kp PAGE_UP    &kp N7        &kp N8        &kp N9        &kp DEL                              &kp UNDER  &kp AMPERSAND    &kp ASTERISK  &kp MINUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
 &kp END   &kp PAGE_DOWN  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp BACKSPACE                        &kp EQUAL  &kp DOLLAR       &kp PERCENT   &kp CARET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &trans    &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans                               &kp SQT    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &kp LEFT_BRACE        &kp RIGHT_BRACE
@@ -139,7 +127,7 @@
 
         L2_function_stuff {
             display-name = "2-fn/nav";
-            bindings = <
+            bindings = 
 &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10                    &trans  &kp LC(LEFT)  &kp UP    &kp LC(RIGHT)  &trans  &trans
 &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11                    &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &trans  &trans
 &kp CAPS  &trans  &kp F1  &kp F2  &kp F3  &kp F12                    &trans  &kp LA(LEFT)  &trans    &kp LA(RIGHT)  &trans  &trans
@@ -150,7 +138,7 @@
 
         L3mousestuff {
             display-name = "3-mouse";
-            bindings = <
+            bindings = 
 &trans  &kp PAGE_UP    &mkp LCLK           &mmv MOVE_Y(-2000)  &mkp RCLK          &msc SCRL_UP                      &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP     &mkp RCLK        &mkp MCLK  &msc SCRL_UP
 &trans  &kp PAGE_DOWN  &mmv MOVE_X(-2000)  &mmv MOVE_Y(2000)   &mmv MOVE_X(2000)  &msc SCRL_DOWN                    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans     &msc SCRL_DOWN
 &trans  &trans         &trans              &trans              &trans             &trans                            &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans           &trans     &trans
@@ -161,7 +149,7 @@
 
         homerowstuffs {
             display-name = "4-Devices";
-            bindings = <
+            bindings = 
 &kp ESCAPE  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans  &to 5                                    &bt BT_CLR             &kp LC(LEFT)  &kp UP        &kp LC(RIGHT)  &trans  &trans
 &trans      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &trans  &none                                    &trans                 &kp LEFT      &kp DOWN      &kp RIGHT      &trans  &trans
 &trans      &bootloader    &trans         &trans         &trans  &trans                                   &trans                 &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(RIGHT)  &trans  &trans
@@ -172,7 +160,7 @@
 
         anotherSymbolLayer {
             display-name = "5-Game";
-            bindings = <
+            bindings = 
 &to 0   &kp Q   &kp W   &kp E   &kp R   &kp T                     &trans  &kp LS(UNDER)  &kp LS(PLUS)  &kp MINUS         &trans    &trans
 &trans  &kp A   &kp S   &kp D   &kp F   &kp G                     &kp Z   &kp SQT        &kp LS(DQT)   &kp SINGLE_QUOTE  &trans    &trans
 &trans  &kp Z   &kp X   &kp C   &kp V   &kp B                     &kp N   &kp M          &kp COMMA     &kp DOT           &kp FSLH  &trans
